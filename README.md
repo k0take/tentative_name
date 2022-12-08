@@ -1,4 +1,7 @@
-■ サービス概要
+■画面遷移図
+[Figma](https://www.figma.com/file/gwugEzurjjBQAIWf0kCBZU/%E3%83%9D%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AA?node-id=0%3A1&t=cc1SMXXuOzXViNFs-1)
+
+■サービス概要
 　最近出費が多いという人に
 　最安値を記録することによって、日々の買い物で節約できるようにする
 　買い物手助けサービスです
