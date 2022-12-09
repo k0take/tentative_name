@@ -84,4 +84,4 @@
 
 
 ## ER図
-[ER図](https://gyazo.com/34ccdfbc7711ce831988bb9e685fa23b)
+[ER図](https://gyazo.com/2bd1cc1f654733cae31f8c363b822bbd)
