@@ -7,9 +7,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       auto_login(@user)
-      redirect_to root_path, notice: 'ユーザー登録が完了しました'
+      redirect_to root_path, notice: t('defaults.message.created', item: User.model_name.human)
     else
-      flash[:alert] = 'ユーザー登録ができませんでした'
+      flash[:alert] = t('defaults.message.not_created', item: User.model_name.human)
       render :new
     end
   end
