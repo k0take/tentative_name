@@ -14,3 +14,17 @@ ja:
       password_reset: 'パスワードリセット手順を送信しました'
       password_reset_success: 'パスワードが変更されました'
       not_authorized: '権限がありません'
+  users:
+    new:
+      title: '新規登録'
+      to_login_page: '登録済みの方はこちら'
+  user_sessions:
+    new:
+      title: 'ログイン'
+      to_register_page: '登録ページへ'
+      password_forget: 'パスワードをお忘れの方はこちら'
+    create:
+      login_success: 'ログインしました'
+      login_failed: 'ログインできませんでした'
+    destroy:
+      logout_success: 'ログアウトしました'
