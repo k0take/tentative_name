@@ -3,6 +3,7 @@ ja:
     login: 'ログイン'
     signup: '登録'
     logout: 'ログアウト'
+    site_title: 'Viva Price'
     message:
       not_authenticated: 'ログインしてください'
       created: '%{item}を作成しました'
