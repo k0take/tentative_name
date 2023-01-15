@@ -11,6 +11,8 @@ ja:
       updated: '%{item}を更新しました'
       not_updated: '%{item}を更新できませんでした'
       deleted: '%{item}を削除しました'
+      register: '%{item}を登録しました'
+      not_register: '%{item}を登録できませんでした'
       delete_alert: '本当に実行してよろしいですか？'
       password_reset: 'パスワードリセット手順を送信しました'
       password_reset_success: 'パスワードが変更されました'
@@ -29,3 +31,9 @@ ja:
       login_failed: 'ログインできませんでした'
     destroy:
       logout_success: 'ログアウトしました'
+  products:
+    new:
+      title: '登録'
+    index:
+      title: '商品一覧'
+
