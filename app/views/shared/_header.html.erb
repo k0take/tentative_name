@@ -1,10 +1,35 @@
 <header>
   <nav class="navbar navbar-expand-lg navigation navbar-light bg-light">
+
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto main-nav align-items-center">
-        <li class="nav-item dropdown dropdown-slide">
-          <%= button_to t('defaults.logout'), logout_path, class: 'dropdown-item', method: :delete %>
-        </li>
+      <ul class="navbar-nav ms-auto main-nav align-items-center">
+        <div class="me-1">
+          <li class="btn btn-outline-danger", "mr-3">
+            <%= link_to 'TOPへ', root_path, class: 'dropdown-item' %>
+          </li>
+        </div>
+
+        <div class="me-1">
+          <li class="btn btn-outline-primary">
+            <%= link_to t('products.index.title'), products_path, class: 'dropdown-item' %>
+          </li>
+        </div>
+
+        <div class="me-1">
+          <li class="btn btn-outline-primary">
+            <%= link_to '商品登録', new_product_path, class: 'dropdown-item' %>
+          </li>
+        </div>
+
+        <div class="me-1">
+          <li class="btn btn-outline-danger">
+            <%= button_to t('defaults.logout'), logout_path, class: 'dropdown-item', method: :delete %>
+          </li>
+        </div>
       </ul>
     </div>
   </nav>
