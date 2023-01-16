@@ -1,5 +1,4 @@
 class Store < ApplicationRecord
   has_many :product_stores
-
-  validates :name, uniqueness: true
+  has_many :Products, through: :product_stores
 end
