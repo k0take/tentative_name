@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all.includes(:user).order(created_at: :desc)
+    @products = Product.where(user_id: current_user.id).includes(:user).order(created_at: :desc)
   end
 
   def new
