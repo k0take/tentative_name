@@ -2,9 +2,26 @@
   <nav class="navbar navbar-expand-lg navigation navbar-light bg-light">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto main-nav align-items-center">
-        <li class="nav-item">
-          <%= link_to t('defaults.login'), login_path ,class: 'nav-link' %>
-        </li>
+        <div class="me-1">
+          <li class="btn btn-outline-danger", "mr-3">
+            <%= link_to 'TOPへ', root_path, class: 'dropdown-item' %>
+          </li>
+        </div>
+      </ul>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto main-nav align-items-center">
+        <div class="me-1">
+          <li class="btn btn-outline-primary">
+            <%= link_to t('defaults.login'), login_path, class: 'dropdown-item' %>
+          </li>
+        </div>
+        <div class="me-1">
+          <li class="btn btn-outline-primary">
+            <%= link_to t('defaults.signup'), new_user_path, class: 'dropdown-item' %>
+          </li>
+        </div>
       </ul>
     </div>
   </nav>
