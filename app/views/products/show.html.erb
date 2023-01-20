@@ -20,6 +20,11 @@
           <%= f.label :discounted_price %>
           <p><%= @product.discounted_price %></p>
         </div>
+        <div>
+          <% @product.categories.each do |category| %>
+            <%= link_to category.name, '#', class: 'badge rounded-pill bg-primary text-decoration-none text-white'%>
+          <% end %>
+        </div>
         <%= link_to "一覧に戻る", products_path, class: 'btn btn-primary' %>
         <%= button_to "削除", @product, method: :delete, class: "btn btn-light" %>
       <% end %>
