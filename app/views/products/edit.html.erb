@@ -22,7 +22,7 @@
           <%= f.text_field :discounted_price, class: 'form-control' %>
         </div>
         <div class="mb-3">
-          <%= f.label :category_name %>
+          <%= f.label :name %>
           <%= f.text_field :name, value: @category_list, placeholder:",で区切って入力してください", class: 'form-control' %>
         </div>
         <%= f.submit t('defaults.edit'), class: 'btn btn-primary' %>
