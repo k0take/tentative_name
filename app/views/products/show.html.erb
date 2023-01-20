@@ -21,6 +21,7 @@
           <p><%= @product.discounted_price %></p>
         </div>
         <%= link_to "一覧に戻る", products_path, class: 'btn btn-primary' %>
+        <%= button_to "削除", @product, method: :delete, class: "btn btn-light" %>
       <% end %>
     </div>
   </div>
