@@ -3,7 +3,7 @@ class Product < ApplicationRecord
   has_many :product_stores
   has_many :stores, through: :product_stores
 
-  validates :product_name, presence: true, uniqueness: true
+  validates :product_name, presence: true
   validates :store_name, presence: true
   validates :regular_price, presence: true
   validates :discounted_price, presence: true

@@ -2,9 +2,11 @@
   <div id="product-id-<%= product.id %>">
     <div class="card">
       <div class="card-body">
-        <p class="card-text">商品名  <%= product.product_name %></p>
+        <p class="card-text">商品名  <%= link_to product.product_name, product_path(product) %></p>
         <p class="card-text">通常価格  <%= product.regular_price %>円</p>
         <p class="card-text">特別価格  <%= product.discounted_price %>円</p>
+        <%= link_to "編集", edit_product_path(product.id), class: "btn btn-light" %>
+        <%= button_to "削除", product_path(product), method: :delete, class: "btn btn-light" %>
       </div>
     </div>
   </div>

@@ -4,6 +4,8 @@ ja:
     signup: '登録'
     logout: 'ログアウト'
     site_title: 'Viva Price'
+    edit: '保存'
+    show: '一覧へ戻る'
     message:
       not_authenticated: 'ログインしてください'
       created: '%{item}を作成しました'
@@ -36,4 +38,9 @@ ja:
       title: '登録'
     index:
       title: '商品一覧'
+    edit:
+      title: '編集'
+    show:
+      title: '詳細'
+
 
