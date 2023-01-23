@@ -5,10 +5,9 @@ class Product < ApplicationRecord
   has_many :product_categories, dependent: :destroy
   has_many :categories, through: :product_categories, dependent: :destroy
 
-  validates :product_name, presence: true
-  validates :store_name, presence: true
-  validates :regular_price, presence: true
-  validates :discounted_price, presence: true
+  accepts_nested_attributes_for :product_stores, reject_if: :all_blank
+
+  validates :name, presence: true
 
   def save_category(category_list)
     current_categories = self.categories.pluck(:name) unless self.categories.nil?

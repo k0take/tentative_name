@@ -4,29 +4,41 @@
     <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
       <h1><%= t('.title') %></h1>
       <%= form_with model: @product, local: true do |f| %>
-      <%= render 'layouts/error_messages', model: f.object %>
+        <%= render 'layouts/error_messages', model: f.object %>
+
         <div class="form-group">
-          <%= f.label :product_name %>
-          <%= f.text_field :product_name, class: 'form-control' %>
-        </div>
-        <div class="form-group">
-          <%= f.label :store_name %>
-          <%= f.text_field :store_name, class: 'form-control' %>
-        </div>
-        <div class="form-group">
-          <%= f.label :regular_price %>
-          <%= f.text_field :regular_price, class: 'form-control' %>
-        </div>
-        <div class="form-group">
-          <%= f.label :discounted_price %>
-          <%= f.text_field :discounted_price, class: 'form-control' %>
-        </div>
-        <div class="mb-3">
           <%= f.label :name %>
-          <%= f.text_field :name, value: @category_list, placeholder:",で区切って入力してください", class: 'form-control' %>
+          <%= f.text_field :name, class: 'form-control' %>
+        </div>
+
+        <%= f.fields_for :product_stores do |product_stores_form| %>
+          <div class="form-group">
+            <%= product_stores_form.label :store %>
+            <%= product_stores_form.select :store_id, @store_list, {}, { class: 'form-control' } %>
+            <%= product_stores_form.text_field :new_store_name,
+                                                class: 'form-control',
+                                                placeholder: '新しい store の名前を入力してください',
+                                                disabled: product_stores_form.object.new_store_name.blank?,
+                                                hidden:   product_stores_form.object.new_store_name.blank? %>
+          </div>
+
+          <div class="form-group">
+            <%= product_stores_form.label :regular_price %>
+            <%= product_stores_form.text_field :regular_price, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= product_stores_form.label :discounted_price %>
+            <%= product_stores_form.text_field :discounted_price, class: 'form-control' %>
+          </div>
+        <% end %>
+        <div class="mb-3">
+          <%= f.label :category_name %>
+          <%= f.text_field :category_name, value: @category_list, placeholder:",で区切って入力してください", class: 'form-control' %>
         </div>
         <%= f.submit t('defaults.signup'), class: 'btn btn-primary' %>
       <% end %>
     </div>
   </div>
 </div>
+<%= javascript_include_tag "product.js" %>
