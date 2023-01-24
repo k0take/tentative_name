@@ -4,16 +4,16 @@
     <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
       <h1><%= t('.title') %></h1>
       <%= form_with model: @product, local: true do |f| %>
-        <%= render 'layouts/error_messages', model: f.object %>
+      <%= render 'layouts/error_messages', model: f.object %>
 
         <div class="form-group">
-          <%= f.label :name %>
+          <%= f.label '商品名' %>
           <%= f.text_field :name, class: 'form-control' %>
         </div>
 
         <%= f.fields_for :product_stores do |product_stores_form| %>
           <div class="form-group">
-            <%= product_stores_form.label :store %>
+            <%= product_stores_form.label '店舗名' %>
             <%= product_stores_form.select :store_id, @store_list, {}, { class: 'form-control' } %>
             <%= product_stores_form.text_field :new_store_name,
                                                 class: 'form-control',
@@ -23,19 +23,15 @@
           </div>
 
           <div class="form-group">
-            <%= product_stores_form.label :regular_price %>
+            <%= product_stores_form.label '通常価格' %>
             <%= product_stores_form.text_field :regular_price, class: 'form-control' %>
           </div>
 
           <div class="form-group">
-            <%= product_stores_form.label :discounted_price %>
+            <%= product_stores_form.label '特別価格' %>
             <%= product_stores_form.text_field :discounted_price, class: 'form-control' %>
           </div>
         <% end %>
-        <div class="mb-3">
-          <%= f.label :category_name %>
-          <%= f.text_field :category_name, value: @category_list, placeholder:",で区切って入力してください", class: 'form-control' %>
-        </div>
         <%= f.submit t('defaults.signup'), class: 'btn btn-primary' %>
       <% end %>
     </div>

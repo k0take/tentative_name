@@ -4,30 +4,38 @@
     <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
       <h1><%= t('.title') %></h1>
       <%= form_with model: @product, local: true do |f| %>
+        <%= render 'layouts/error_messages', model: f.object %>
+
         <div class="form-group">
-          <%= f.label :product_name %>
-          <p><%= @product.product_name %></p>
+          <%= f.label '商品名' %>
+          <%= f.text_field :name, class: 'form-control' %>
         </div>
-        <div class="form-group">
-          <%= f.label :store_name %>
-          <p><%= @product.store_name %></p>
-        </div>
-        <div class="form-group">
-          <%= f.label :regular_price %>
-          <p><%= @product.regular_price %></p>
-        </div>
-        <div class="form-group">
-          <%= f.label :discounted_price %>
-          <p><%= @product.discounted_price %></p>
-        </div>
-        <div>
-          <% @product.categories.each do |category| %>
-            <%= link_to category.name, '#', class: 'badge rounded-pill bg-primary text-decoration-none text-white'%>
-          <% end %>
-        </div>
-        <%= link_to "一覧に戻る", products_path, class: 'btn btn-primary' %>
-        <%= button_to "削除", @product, method: :delete, class: "btn btn-light" %>
+
+        <%= f.fields_for :product_stores do |product_stores_form| %>
+          <div class="form-group">
+            <%= product_stores_form.label '店舗名' %>
+            <%= product_stores_form.select :store_id, @store_list, {}, { class: 'form-control' } %>
+            <%= product_stores_form.text_field :new_store_name,
+                                                class: 'form-control',
+                                                placeholder: '新しい store の名前を入力してください',
+                                                disabled: product_stores_form.object.new_store_name.blank?,
+                                                hidden:   product_stores_form.object.new_store_name.blank? %>
+          </div>
+
+          <div class="form-group">
+            <%= product_stores_form.label '通常価格' %>
+            <%= product_stores_form.text_field :regular_price, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= product_stores_form.label '特別価格' %>
+            <%= product_stores_form.text_field :discounted_price, class: 'form-control' %>
+          </div>
+        <% end %>
+        <%= f.submit t('defaults.edit'), class: 'btn btn-primary' %>
       <% end %>
+      <%= link_to "戻る", products_path, class: 'btn btn-primary' %>
+      <%= button_to "削除", @product, method: :delete, class: "btn btn-light" %>
     </div>
   </div>
 </div>
