@@ -5,7 +5,22 @@ class Product < ApplicationRecord
   has_many :product_categories, dependent: :destroy
   has_many :categories, through: :product_categories, dependent: :destroy
 
-  accepts_nested_attributes_for :product_stores, reject_if: :all_blank
-
   validates :name, presence: true
+
+  accepts_nested_attributes_for :product_stores
+
+  def save_category(category_list)
+    current_categories = self.categories.pluck(:category_name) unless self.categories.nil?
+    old_categories = current_categories - category_list
+    new_categories = category_list - current_categories
+
+    old_categories.each do |old|
+      self.categories.delete Category.find_by(category_name: old)
+    end
+
+    new_categories.each do |new|
+      new_product_category = Category.find_or_create_by(category_name: new)
+      self.categories << new_product_category
+    end
+  end
 end
