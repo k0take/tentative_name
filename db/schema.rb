@@ -26,6 +26,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_20_064738) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_product_categories_on_category_id"
+    t.index ["product_id", "category_id"], name: "index_product_categories_on_product_id_and_category_id", unique: true
     t.index ["product_id"], name: "index_product_categories_on_product_id"
   end
 
