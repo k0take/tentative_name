@@ -15,7 +15,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_20_064738) do
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
-    t.string "name"
+    t.string "category_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -26,33 +26,31 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_20_064738) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_product_categories_on_category_id"
+    t.index ["product_id", "category_id"], name: "index_product_categories_on_product_id_and_category_id", unique: true
     t.index ["product_id"], name: "index_product_categories_on_product_id"
   end
 
   create_table "product_stores", force: :cascade do |t|
-    t.bigint "products_id"
-    t.bigint "stores_id"
+    t.bigint "product_id"
+    t.bigint "store_id"
     t.integer "regular_price", null: false
     t.integer "discounted_price", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["products_id"], name: "index_product_stores_on_products_id"
-    t.index ["stores_id"], name: "index_product_stores_on_stores_id"
+    t.index ["product_id"], name: "index_product_stores_on_product_id"
+    t.index ["store_id"], name: "index_product_stores_on_store_id"
   end
 
   create_table "products", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.string "product_name", null: false
-    t.string "store_name", null: false
-    t.integer "regular_price", null: false
-    t.integer "discounted_price", null: false
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
   create_table "stores", force: :cascade do |t|
-    t.string "store_name", null: false
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
