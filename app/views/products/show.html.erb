@@ -36,6 +36,11 @@
             <%= f.label :category_name %>
             <%= f.text_field :category_name, value: @category_list, placeholder:",で区切って入力してください", class: 'form-control' %>
           </div>
+
+          <div class="form-group">
+            <%= f.label "登録日時" %>
+            <%= @product.created_at.strftime('%Y/%m/%d') %>
+          </div>
         <% end %>
         <%= f.submit t('defaults.edit'), class: 'btn btn-primary' %>
       <% end %>
