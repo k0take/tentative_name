@@ -31,6 +31,16 @@
             <%= product_stores_form.label '特別価格' %>
             <%= product_stores_form.text_field :discounted_price, class: 'form-control' %>
           </div>
+
+          <div class="form-group">
+            <%= f.label :category_name %>
+            <%= f.text_field :category_name, value: @category_list, placeholder:",で区切って入力してください", class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label "登録日時" %>
+            <%= @product.created_at.strftime('%Y/%m/%d') %>
+          </div>
         <% end %>
         <%= f.submit t('defaults.edit'), class: 'btn btn-primary' %>
         <%= link_to "戻る", products_path, class: 'btn btn-primary' %>
