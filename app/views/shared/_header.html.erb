@@ -1,7 +1,11 @@
-<header>
-  <nav class="navbar navbar-expand-lg navigation navbar-light bg-light">
+<header class="header">
+  <nav class="navbar navbar-expand-lg navigation navbar-light bg-info">
 
-    <%= link_to 'VivaPrice', root_path, data: {"turbolinks" => false} %>
+    <div id="header_logo">
+      <%= link_to root_path, class: "navbar-brand text-white" do %>
+        <%= image_tag 'logo.png', class: "header_logo_size" %>
+      <% end %>
+    </div>
 
     <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -10,13 +14,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto main-nav align-items-center">
         <div class="me-1">
-          <li class="btn btn-outline-primary">
-            <%= link_to t('products.index.title'), products_path %>
+          <li class="btn btn-dark">
+            <%= link_to t('products.index.title'), products_path, class: 'text-white' %>
           </li>
         </div>
         <div class="me-1">
-          <li class="btn btn-outline-primary">
-            <%= link_to '商品登録', new_product_path %>
+          <li class="btn btn-dark">
+            <%= link_to '商品登録', new_product_path, class: 'text-white' %>
           </li>
         </div>
         <div class="me-1">
