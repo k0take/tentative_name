@@ -23,13 +23,13 @@ default: &default
 
 development:
   <<: *default
-  database: o_kaitoku_development
+  database: viva_price_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user running Rails.
-  #username: o_kaitoku
+  #username: viva_price
 
   # The password associated with the postgres role (username).
   #password:
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: o_kaitoku_test
+  database: viva_price_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
-  database: o_kaitoku_production
-  username: o_kaitoku
-  password: <%= ENV["O_KAITOKU_DATABASE_PASSWORD"] %>
+  database: cldh5lglh00jx9try8vhzbrns
+  username: cldh5lglf00jv9try82a722tl
+  password: <%= ENV["VIVA_PRICE_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
