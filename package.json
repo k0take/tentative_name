@@ -1,0 +1,23 @@
+{
+  "name": "viva_price",
+  "version": "1.0.0",
+  "description": "最近出費が多いという人に   最安値を記録することによって、日々の買い物で節約できるようにする   買い物手助けサービスです",
+  "main": "babel.config.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/k0take/tentative_name.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/k0take/tentative_name/issues"
+  },
+  "homepage": "https://github.com/k0take/tentative_name#readme"
+}

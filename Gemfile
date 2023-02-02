@@ -57,8 +57,6 @@ gem 'annotate'
 # Authentication
 gem 'sorcery'
 
-gem 'webpacker'
-
 gem 'bootstrap'
 gem 'jquery-rails'
 
