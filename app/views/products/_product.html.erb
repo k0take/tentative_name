@@ -4,15 +4,17 @@
       <div class="card-body">
         <%= link_to product.name, product_path(product) %>
 
-          <br>店舗名    特別価格    通常価格</br>
+          <br>店舗名      特別価格      通常価格</br>
         <% product.product_stores.each do |product_store| %>
           <%= product_store.store.name %>
           <%= product_store.regular_price %> 円
           <%= product_store.discounted_price %> 円
         <% end %>   
-        <% product.categories.each do |category| %>
-          <%= link_to category.category_name, products_path(category_id: category.id), class:'badge rounded-pill bg-primary text-decoration-none text-white' %>
-        <% end %>     
+        <br>
+          <% product.categories.each do |category| %>
+            <%= link_to category.category_name, products_path(category_id: category.id), class:'badge rounded-pill bg-primary text-decoration-none text-white' %>
+          <% end %>
+        </br>
       </div>
     </div>
   </div>

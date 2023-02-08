@@ -43,9 +43,10 @@
           </div>
         <% end %>
         <%= f.submit t('defaults.edit'), class: 'btn btn-primary' %>
-        <%= link_to "戻る", products_path, class: 'btn btn-primary' %>
-        <%= button_to "削除", @product, method: :delete, class: "btn btn-light" %>
       <% end %>
+      <%= link_to "戻る", products_path, class: 'btn btn-primary' %>
+      <%= button_to "削除", @product, method: :delete, class: "btn btn-light" %>
     </div>
   </div>
 </div>
+<%= javascript_include_tag "product.js" %>
