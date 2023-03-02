@@ -10,7 +10,8 @@ class ProductsController < ApplicationController
       @category = Category.find(params[:category_id])
       @products = @category.products
     end
-    @products = Product.where(user_id: current_user.id).includes(:user).order(created_at: :desc)
+    @q = current_user.products.ransack(params[:q])
+    @products = @q.result(distinct: true).includes(:user).order(created_at: :desc)
   end
 
   def new

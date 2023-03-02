@@ -9,6 +9,14 @@ class Product < ApplicationRecord
 
   accepts_nested_attributes_for :product_stores
 
+  def self.ransackable_attributes(auth_object = nil)
+    ["created_at", "id", "name", "updated_at", "user_id"]
+  end
+
+  def self.ransackable_associations(auth_object = nil)
+    ["categories", "product_categories", "product_stores", "stores", "user"]
+  end
+
   def save_category(category_list)
     current_categories = self.categories.pluck(:category_name) unless self.categories.nil?
     old_categories = current_categories - category_list
