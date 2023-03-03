@@ -12,7 +12,7 @@
         <% end %>   
         <br>
           <% product.categories.each do |category| %>
-            <%= link_to category.category_name, products_path(category_id: category.id), class:'badge rounded-pill bg-primary text-decoration-none text-white' %>
+            <%= link_to category.category_name, products_path(category_id: category.id), class:'badge bg-secondary text-decoration-none text-white' %>
           <% end %>
         </br>
       </div>
