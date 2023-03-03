@@ -10,7 +10,8 @@ class ProductsController < ApplicationController
       @category = Category.find(params[:category_id])
       @products = @category.products
     end
-    @products = Product.where(user_id: current_user.id).includes(:user).order(created_at: :desc)
+    @q = current_user.products.ransack(params[:q])
+    @products = @q.result(distinct: true).includes(:user).order(created_at: :desc)
   end
 
   def new
@@ -40,6 +41,7 @@ class ProductsController < ApplicationController
 
   def edit
     @product = current_user.products.find(params[:id])
+    @category_list=@product.categories.pluck(:category_name).join(',')
   end
 
   def update
@@ -55,6 +57,7 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+    @product = current_user.products.find(params[:id])
     @product.destroy!
     redirect_to products_path, success: t('defaults.message.deleted', item: Product.model_name.human)
   end

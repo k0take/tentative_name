@@ -6,6 +6,7 @@ ja:
     site_title: 'Viva Price'
     edit: '保存'
     show: '一覧へ戻る'
+    search_word: '検索'
     message:
       not_authenticated: 'ログインしてください'
       created: '%{item}を作成しました'
@@ -38,6 +39,7 @@ ja:
       title: '登録'
     index:
       title: '商品一覧'
+      no_result: '商品が登録されていません'
     edit:
       title: '編集'
     show:
