@@ -39,6 +39,7 @@ ja:
       title: '登録'
     index:
       title: '商品一覧'
+      no_result: '商品が登録されていません'
     edit:
       title: '編集'
     show:

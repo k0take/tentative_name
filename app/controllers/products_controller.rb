@@ -41,6 +41,7 @@ class ProductsController < ApplicationController
 
   def edit
     @product = current_user.products.find(params[:id])
+    @category_list=@product.categories.pluck(:category_name).join(',')
   end
 
   def update
@@ -56,6 +57,7 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+    @product = current_user.products.find(params[:id])
     @product.destroy!
     redirect_to products_path, success: t('defaults.message.deleted', item: Product.model_name.human)
   end
