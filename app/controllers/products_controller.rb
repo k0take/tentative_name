@@ -35,7 +35,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id])
+    @product = current_user.products.find(params[:id])
     @category_list=@product.categories.pluck(:category_name).join(',')
   end
 
