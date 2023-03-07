@@ -1,7 +1,7 @@
 <%= search_form_for @q, url: url do |f| %>
   <div class="form-group">
     <%= f.label 'キーワード検索' %>
-    <%= f.search_field :name_or_stores_name_cont, class: 'form-control', placeholder: t('defaults.search_word') %>
+    <%= f.search_field :name_or_stores_name_or_categories_category_name_cont, class: 'form-control', placeholder: t('defaults.search_word') %>
   </div>
   <div class="form-group">
     <%= f.label '価格検索' %>
