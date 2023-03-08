@@ -6,6 +6,25 @@ header {
   height: 2.0rem;
 }
 
+footer {
+  background-color: rgb(48, 200, 214);
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+.privacy-policy {
+  color: rgb(255, 255, 255);
+}
+
+.privacy-policy:hover {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+.privacy {
+  margin: 70px;
+}
+
 .text-black:hover {
   text-decoration: none;
 }

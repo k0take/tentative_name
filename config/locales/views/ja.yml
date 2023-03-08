@@ -7,6 +7,7 @@ ja:
     edit: '保存'
     show: '一覧へ戻る'
     search_word: '検索'
+    privacy: 'プライバシーポリシー'
     message:
       not_authenticated: 'ログインしてください'
       created: '%{item}を作成しました'
