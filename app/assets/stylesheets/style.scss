@@ -9,7 +9,35 @@ header {
 footer {
   background-color: rgb(48, 200, 214);
   color: rgb(255, 255, 255);
-  text-align: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.terms-of-service {
+  color: rgb(255, 255, 255);
+}
+
+.terms-of-service:hover {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+.terms {
+  margin: 70px;
 }
 
 .privacy-policy {

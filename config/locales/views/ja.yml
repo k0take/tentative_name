@@ -8,6 +8,7 @@ ja:
     show: '一覧へ戻る'
     search_word: '検索'
     privacy: 'プライバシーポリシー'
+    terms: '利用規約'
     message:
       not_authenticated: 'ログインしてください'
       created: '%{item}を作成しました'
