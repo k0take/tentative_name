@@ -32,7 +32,7 @@ footer {
 }
 
 .terms-of-service:hover {
-  color: rgb(255, 255, 255);
+  color: #2b546a;
   text-decoration: none;
 }
 
@@ -45,12 +45,21 @@ footer {
 }
 
 .privacy-policy:hover {
-  color: rgb(255, 255, 255);
+  color: #2b546a;
   text-decoration: none;
 }
 
 .privacy {
   margin: 70px;
+}
+
+.contact {
+  color: rgb(255, 255, 255);
+}
+
+.contact:hover {
+  color: #2b546a;
+  text-decoration: none;
 }
 
 .text-black:hover {

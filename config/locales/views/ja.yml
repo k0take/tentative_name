@@ -9,6 +9,7 @@ ja:
     search_word: '検索'
     privacy: 'プライバシーポリシー'
     terms: '利用規約'
+    contact: 'お問い合わせ'
     message:
       not_authenticated: 'ログインしてください'
       created: '%{item}を作成しました'
