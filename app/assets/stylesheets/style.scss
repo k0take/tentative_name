@@ -72,3 +72,23 @@ footer {
 .table td {
   border:none;
 }
+
+.pagination {
+  justify-content: center;
+  display: flex;
+}
+
+.pagination a {
+  color: rgb(48, 200, 214);
+  border: none;
+  border-radius: 100%;
+}
+
+.page-item.active .page-link {
+  color: aquamarine;
+  background-color: rgb(110, 110, 110) !important;
+}
+
+.pagination a:hover {
+  border-radius: 100%;
+}

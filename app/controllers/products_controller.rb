@@ -11,7 +11,7 @@ class ProductsController < ApplicationController
       @products = @category.products
     end
     @q = current_user.products.ransack(params[:q])
-    @products = @q.result(distinct: true).includes(:user).order(created_at: :desc)
+    @products = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   def new
