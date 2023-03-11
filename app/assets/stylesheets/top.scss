@@ -34,3 +34,48 @@
   color: rgb(255, 255, 255);
   background-color: rgb(48, 142, 214);
 }
+
+.content {
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  font-weight: bold;
+  color: #2b546a;/*文字色*/
+  background: #FFF;
+  border: solid 3px rgb(48, 142, 214);/*線*/
+  border-radius: 10px;/*角の丸み*/
+}
+
+.text-base {
+  font-size: 20px;
+}
+
+.base-title {
+  font-size: 25px;
+}
+
+.explanation {
+  font-size: 17px;
+}
+
+.hmm {
+  width: 30%;
+}
+
+.use {
+  color: #2b546a;
+  padding: 0.5em 0;/*上下の余白*/
+  border-top: solid 3px rgb(48, 142, 214);/*上線*/
+  border-bottom: solid 3px rgb(48, 142, 214);/*下線*/
+}
+
+.new {
+  width: 17%;
+}
+
+.product_new {
+  width: 20%;
+}
+
+.index {
+  width: 20%;
+}
