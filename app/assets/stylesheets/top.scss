@@ -45,12 +45,23 @@
   border-radius: 10px;/*角の丸み*/
 }
 
-.text-base {
-  font-size: 20px;
+.discription {
+  color: #2b546a;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  line-height: 2.0;
+}
+
+.discription_bottom {
+  color: #2b6a68;
+  font-size: 1.9rem;
+  font-weight: bold;
 }
 
 .base-title {
   font-size: 25px;
+  font-weight: bold;
 }
 
 .explanation {
@@ -59,6 +70,12 @@
 
 .hmm {
   width: 30%;
+  margin: 10px;
+}
+
+.worry {
+  width: 30%;
+  margin: 10px;
 }
 
 .use {
