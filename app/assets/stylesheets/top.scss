@@ -34,3 +34,65 @@
   color: rgb(255, 255, 255);
   background-color: rgb(48, 142, 214);
 }
+
+.content {
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  font-weight: bold;
+  color: #2b546a;/*文字色*/
+  background: #FFF;
+  border: solid 3px rgb(48, 142, 214);/*線*/
+  border-radius: 10px;/*角の丸み*/
+}
+
+.discription {
+  color: #2b546a;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  line-height: 2.0;
+}
+
+.discription_bottom {
+  color: #2b6a68;
+  font-size: 1.9rem;
+  font-weight: bold;
+}
+
+.base-title {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.explanation {
+  font-size: 17px;
+}
+
+.hmm {
+  width: 30%;
+  margin: 10px;
+}
+
+.worry {
+  width: 30%;
+  margin: 10px;
+}
+
+.use {
+  color: #2b546a;
+  padding: 0.5em 0;/*上下の余白*/
+  border-top: solid 3px rgb(48, 142, 214);/*上線*/
+  border-bottom: solid 3px rgb(48, 142, 214);/*下線*/
+}
+
+.new {
+  width: 17%;
+}
+
+.product_new {
+  width: 20%;
+}
+
+.index {
+  width: 20%;
+}
