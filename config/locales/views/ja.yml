@@ -62,5 +62,9 @@ ja:
       clear: 'クリア'
       min: '以上'
       max: '以下'
-
+  static_pages:
+    terms_of_service:
+      new_user: '登録ページへ'
+    privacy_policy:
+      new_user: '登録ページへ'
 
