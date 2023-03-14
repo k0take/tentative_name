@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       auto_login(@user)
       redirect_to root_path, notice: t('defaults.message.created', item: User.model_name.human)
     else
-      flash[:alert] = t('defaults.message.not_created', item: User.model_name.human)
+      flash.now[:alert] = t('defaults.message.not_created', item: User.model_name.human)
       render :new
     end
   end
