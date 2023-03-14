@@ -7,13 +7,13 @@
         <%= render 'layouts/error_messages', model: f.object %>
 
         <div class="form-group">
-          <%= f.label '商品名' %>
+          <%= f.label 'product_name' %>
           <%= f.text_field :name, class: 'form-control' %>
         </div>
 
         <%= f.fields_for :product_stores do |product_stores_form| %>
           <div class="form-group">
-            <%= product_stores_form.label '店舗名' %>
+            <%= product_stores_form.label 'store_name' %>
             <%= product_stores_form.select :store_id, @store_list, {}, { class: 'form-control' } %>
             <%= product_stores_form.text_field :new_store_name,
                                                 class: 'form-control',
@@ -23,12 +23,12 @@
           </div>
 
           <div class="form-group">
-            <%= product_stores_form.label '通常価格' %>
+            <%= product_stores_form.label 'regular_price' %>
             <%= product_stores_form.text_field :regular_price, class: 'form-control' %>
           </div>
 
           <div class="form-group">
-            <%= product_stores_form.label '特別価格' %>
+            <%= product_stores_form.label 'discounted_price' %>
             <%= product_stores_form.text_field :discounted_price, class: 'form-control' %>
           </div>
 

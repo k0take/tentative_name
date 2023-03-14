@@ -1,17 +1,17 @@
 <%= search_form_for @q, url: url do |f| %>
   <div class="tabs">
     <input id="keyword" type="radio" name="tab_item" checked>
-    <label class="tab_item" for="keyword">キーワード検索</label>
+    <label class="tab_item" for="keyword"><%= t('.keyword_search') %></label>
 
     <input id="price" type="radio" name="tab_item">
-    <label class="tab_item" for="price">価格検索</label>
+    <label class="tab_item" for="price"><%= t('.price_search') %></label>
 
     <div class="tab_content" id="keyword_content">
       <div class="tab_content_description">
         <%= f.search_field :name_or_stores_name_or_categories_category_name_cont, class: 'form-control', placeholder: t('defaults.search_word') %>
         <div class="mt-4">
           <%= f.submit class: 'btn btn-primary mb-3' %>
-          <%= link_to "クリア", products_path, class: 'btn btn-secondary mb-3' %>
+          <%= link_to t('.clear'), products_path, class: 'btn btn-secondary mb-3' %>
         </div>
       </div>
     </div>
@@ -20,16 +20,16 @@
       <div class="tab_content_description">
         <div class="row">
           <div class="col">
-            <%= f.number_field :product_stores_regular_price_gteq, step: "100", class: 'form-control', placeholder: "Min" %>
+            <%= f.number_field :product_stores_regular_price_gteq, step: "100", class: 'form-control', placeholder: t('.min') %>
           </div>
           ~
           <div class="col">
-            <%= f.number_field :product_stores_discounted_price_lteq, step: "100", class: 'form-control', placeholder: "Max" %>
+            <%= f.number_field :product_stores_discounted_price_lteq, step: "100", class: 'form-control', placeholder: t('.max') %>
           </div>
         </div>
         <div class="mt-4">
           <%= f.submit class: 'btn btn-primary mb-3' %>
-          <%= link_to "クリア", products_path, class: 'btn btn-secondary mb-3' %>
+          <%= link_to t('.clear'), products_path, class: 'btn btn-secondary mb-3' %>
         </div>
       </div>
     </div>
