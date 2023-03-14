@@ -17,6 +17,13 @@
           <%= f.label :password_confirmation %>
           <%= f.password_field :password_confirmation, placeholder: t('defaults.password_confirmation'), class: 'form-control' %>
         </div>
+        <p class="agree mt-3 mb-4">
+          アカウントを作成することにより、
+          <%= link_to t('defaults.terms'), terms_of_service_path %>
+          および
+          <%= link_to t('defaults.privacy'), privacy_policy_path %>
+          に同意するものとします。
+        </p>
         <%= f.submit t('defaults.signup'), class: 'btn btn-primary' %>
       <% end %>
       <div class='text-center'>
