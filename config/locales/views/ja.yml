@@ -2,10 +2,14 @@ ja:
   defaults:
     login: 'ログイン'
     signup: '登録'
+    password8: 'パスワード（8文字以上）'
+    password_confirmation: 'パスワード確認用'
     logout: 'ログアウト'
+    product_new: '商品登録'
     site_title: 'Viva Price'
     edit: '保存'
-    show: '一覧へ戻る'
+    destroy: '削除'
+    show: '戻る'
     search_word: '検索'
     privacy: 'プライバシーポリシー'
     terms: '利用規約'
@@ -43,9 +47,20 @@ ja:
     index:
       title: '商品一覧'
       no_result: '商品が登録されていません'
+      product_name: '商品名'
+      store_name: '店舗名'
+      regular_price: '通常価格'
+      discounted_price: '特別価格'
+      category_name: 'カテゴリー'
     edit:
       title: '編集'
     show:
       title: '編集'
+    search:
+      keyword_search: 'キーワード検索'
+      price_search: '価格検索'
+      clear: 'クリア'
+      min: '以上'
+      max: '以下'
 
 
