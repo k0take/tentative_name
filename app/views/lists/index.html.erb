@@ -1,14 +1,19 @@
-<h1>買い物リスト</h1>
-<table>
+<table class="mb-5">
   <thead>
   </thead>
   <tbody>
   <%= render partial: 'form', locals: { list: @list } %>
     <% @lists.each do |list| %>
       <tr>
-        <td><%= check_box :agreement, :as => :boolean, checked:false %></td>
-        <td><%= list.name %></td>
-        <td><%= button_to t('defaults.destroy'), list_path(list), method: :delete, class: "btn btn-light" %></td>
+        <td>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" value="" id="formCheckDefault">
+            <label for="formCheckDefault" class="form-check-label mr-4">
+            </label>
+          </div>
+        </td>
+        <td class="list_name"><%= list.name %></td>
+        <td><%= button_to t('defaults.destroy'), list_path(list), method: :delete, class: "btn btn-info ml-4" %></td>
       </tr>
     <% end %>
   </tbody>

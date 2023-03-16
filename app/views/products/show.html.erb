@@ -3,6 +3,9 @@
   <div class="row">
     <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
       <h1><%= t('.title') %></h1>
+      <div style="text-align: right">
+        <%= button_to t('defaults.destroy'), @product, method: :delete, class: "btn btn-light" %>
+      </div>
       <%= form_with model: @product, local: true do |f| %>
         <%= render 'layouts/error_messages', model: f.object %>
 
@@ -42,10 +45,9 @@
             <%= @product.created_at.strftime('%Y/%m/%d') %>
           </div>
         <% end %>
+        <%= link_to t('defaults.show'), products_path, class: 'btn btn-primary' %>
         <%= f.submit t('defaults.edit'), class: 'btn btn-primary' %>
       <% end %>
-      <%= link_to t('defaults.show'), products_path, class: 'btn btn-primary' %>
-      <%= button_to t('defaults.destroy'), @product, method: :delete, class: "btn btn-light" %>
     </div>
   </div>
 </div>
