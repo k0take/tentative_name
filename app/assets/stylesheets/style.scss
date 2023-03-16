@@ -11,10 +11,6 @@ footer {
   color: rgb(255, 255, 255);
 }
 
-.name {
-  color: #2b546a;
-}
-
 .name:hover {
   color: #2b546a;
   text-decoration: none;
@@ -46,7 +42,7 @@ footer {
 }
 
 .terms {
-  margin: 70px;
+  margin: 30px;
 }
 
 .privacy-policy {
@@ -59,7 +55,7 @@ footer {
 }
 
 .privacy {
-  margin: 70px;
+  margin: 30px;
 }
 
 .contact {
@@ -122,7 +118,7 @@ footer {
   padding-bottom: 30px;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  width: 530px;
+  width: 350px;
   margin: 0 auto;
 }
 
@@ -189,4 +185,25 @@ input[name="tab_item"] {
 
 .text_container {
   text-align: center;
+}
+
+.product_title {
+  font-size: 1.2rem;
+}
+
+.product_idx {
+  font-size: 1.1rem;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+}
+
+.back_btn {
+  text-align: left;
+}
+
+.delete_btn {
+  text-align: right;
 }

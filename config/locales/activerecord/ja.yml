@@ -9,10 +9,15 @@ ja:
         password: 'パスワード'
         password_confirmation: 'パスワード(確認)'
       product:
+        name: '商品名'
         product_name: '商品名'
         category_name: 'カテゴリー'
         created_at: '登録日時'
       product_store:
         store_name: '店舗名'
+        regular_price: '通常価格'
+        discounted_price: '特別価格'
+      product_stores:
+        store: '店舗名'
         regular_price: '通常価格'
         discounted_price: '特別価格'

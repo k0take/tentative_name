@@ -7,10 +7,9 @@
         <% if @products.present? %>
           <table class="table table-hover mt-5" style="table-layout:fixed;">
             <thead>
-              <tr>
+              <tr class="product_title">
                 <th><%= t('.product_name') %></th>
                 <th><%= t('.store_name') %></th>
-                <th><%= t('.regular_price') %></th>
                 <th><%= t('.discounted_price') %></th>
                 <th><%= t('.category_name') %></th>
               </tr>
