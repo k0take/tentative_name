@@ -1,0 +1,15 @@
+<h1>買い物リスト</h1>
+<table>
+  <thead>
+  </thead>
+  <tbody>
+  <%= render partial: 'form', locals: { list: @list } %>
+    <% @lists.each do |list| %>
+      <tr>
+        <td><%= check_box :agreement, :as => :boolean, checked:false %></td>
+        <td><%= list.name %></td>
+        <td><%= button_to t('defaults.destroy'), list_path(list), method: :delete, class: "btn btn-light" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

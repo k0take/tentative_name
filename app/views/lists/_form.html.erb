@@ -1,0 +1,6 @@
+<%= form_for list do |f| %>
+  <%= render 'layouts/error_messages', model: f.object %>
+  <div><%= f.label :name %></div>
+  <div><%= f.text_field :name %></div>
+  <div><%= f.submit %></div>
+<% end %>
