@@ -3,6 +3,10 @@
   </thead>
   <tbody>
   <%= render partial: 'form', locals: { list: @list } %>
+  <div class="owabi">
+    <p>※現在、ページ切り替え、新規メモ作成、削除を行うとチェックマークが外れてしまいます。</p>
+    <p>チェックマークをつける際はご注意ください。</p>
+  </div>
     <% @lists.each do |list| %>
       <tr>
         <td>
