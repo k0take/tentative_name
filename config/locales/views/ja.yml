@@ -44,7 +44,7 @@ ja:
       logout_success: 'ログアウトしました'
   products:
     new:
-      title: '登録'
+      title: '商品登録'
     index:
       title: '商品一覧'
       no_result: '商品が登録されていません'
@@ -65,7 +65,11 @@ ja:
       max: '以下'
   static_pages:
     terms_of_service:
+      title: '利用規約'
       new_user: '登録ページへ'
     privacy_policy:
+      title: 'プライバシーポリシー'
       new_user: '登録ページへ'
-
+  lists:
+    index:
+      title: 'お買い物メモ'
