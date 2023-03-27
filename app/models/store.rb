@@ -4,7 +4,7 @@ class Store < ApplicationRecord
 
   validates :name, uniqueness: true, presence: true
 
-  def self.ransackable_attributes(auth_object = nil)
-    ["created_at", "id", "name", "updated_at"]
+  def self.ransackable_attributes(_auth_object = nil)
+    %w[created_at id name updated_at]
   end
 end

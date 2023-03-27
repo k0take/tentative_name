@@ -9,6 +9,6 @@ class User < ApplicationRecord
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates :email, format: {with: VALID_EMAIL_REGEX}, allow_blank: true
+  validates :email, format: { with: VALID_EMAIL_REGEX }, allow_blank: true
   validates :email, presence: true
 end
