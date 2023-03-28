@@ -1,0 +1,27 @@
+inherit_from: .rubocop_todo.yml
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/StringConcatenation:
+  Mode: conservative
+
+Metrics/AbcSize:
+  Max: 25
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+    - 'db/**'
+
+MethodLength:
+  Max: 13
+
+CyclomaticComplexity:
+  Max: 10
+
+LineLength:
+  Max: 200

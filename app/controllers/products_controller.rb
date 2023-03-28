@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :find_product, only: [:edit, :update, :destroy]
+  before_action :find_product, only: %i[edit update destroy]
   before_action :set_store_list, only: %i[new create show edit update]
 
   def index
@@ -37,17 +37,17 @@ class ProductsController < ApplicationController
 
   def show
     @product = current_user.products.find(params[:id])
-    @category_list=@product.categories.pluck(:category_name).join(',')
+    @category_list = @product.categories.pluck(:category_name).join(',')
   end
 
   def edit
     @product = current_user.products.find(params[:id])
-    @category_list=@product.categories.pluck(:category_name).join(',')
+    @category_list = @product.categories.pluck(:category_name).join(',')
   end
 
   def update
     @product = current_user.products.find(params[:id])
-    @category_list=params[:product][:category_name].split(',')
+    @category_list = params[:product][:category_name].split(',')
     if @product.update(product_params)
       @product.save_category(@category_list)
       redirect_to products_path, success: t('defaults.message.updated', item: Product.model_name.human)
@@ -73,7 +73,7 @@ class ProductsController < ApplicationController
                                       :new_store_name,
                                       :regular_price,
                                       :discounted_price,
-                                      category_ids: []
+                                      { category_ids: [] }
                                     ])
   end
 
@@ -86,7 +86,7 @@ class ProductsController < ApplicationController
     @store_list = [
       ['選択してください', nil],
       *Store.all.pluck(:name, :id),
-      ['(新規 store を登録)', 'new-store'],
+      ['(新規 store を登録)', 'new-store']
     ]
   end
 end

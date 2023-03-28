@@ -7,12 +7,12 @@ class ProductStore < ApplicationRecord
   validates :regular_price, presence: true
   validates :discounted_price, presence: true
 
-  def self.ransackable_attributes(auth_object = nil)
-    ["created_at", "discounted_price", "id", "product_id", "regular_price", "store_id", "updated_at"]
+  def self.ransackable_attributes(_auth_object = nil)
+    %w[created_at discounted_price id product_id regular_price store_id updated_at]
   end
 
   def new_store_name=(name)
-    build_store(id: nil, name: name) if name.present?
+    build_store(id: nil, name:) if name.present?
     @new_store_name = name
   end
 end
