@@ -33,7 +33,7 @@ RSpec.describe User, type: :model do
       end
       it 'passwordとconfirmが一致していないと登録できない' do
         @user.password = 'test123'
-        @user.password_confirmation ='test1234'
+        @user.password_confirmation = 'test1234'
         @user.valid?
         expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
       end
