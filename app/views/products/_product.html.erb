@@ -9,9 +9,7 @@
             <td><%= product_store.discounted_price %> 円</td>
             <td>
               <% product.categories.each do |category| %>
-                <div class="badge bg-secondary text-decoration-none text-white">
-                  <%= category.category_name %>
-                </div>
+                <%= link_to category.category_name, products_path(category_id: category.id), class:'badge bg-secondary text-decoration-none text-white' %>
               <% end %>
             </td>
           </tr>
