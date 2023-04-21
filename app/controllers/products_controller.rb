@@ -4,13 +4,13 @@ class ProductsController < ApplicationController
 
   def index
     @category_list = Category.all
-    if params[:category_id].nil?
-      @products = Product
-    else
+    if params[:category_id].present?
       @category = Category.find(params[:category_id])
       @products = @category.products
+    else
+      @products = Product.all
     end
-    @q = current_user.products.ransack(params[:q])
+    @q = @products.where(user_id: current_user.id).ransack(params[:q])
     @products = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page])
     @q = Product.ransack
   end
