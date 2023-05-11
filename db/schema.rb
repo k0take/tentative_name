@@ -10,69 +10,70 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 20_230_316_011_230) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_11_041920) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
+  enable_extension "plpgsql"
 
-  create_table 'categories', force: :cascade do |t|
-    t.string 'category_name', null: false
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index ['category_name'], name: 'index_categories_on_category_name', unique: true
+  create_table "categories", force: :cascade do |t|
+    t.string "category_name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_name"], name: "index_categories_on_category_name", unique: true
   end
 
-  create_table 'lists', force: :cascade do |t|
-    t.string 'name', null: false
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.integer 'user_id'
+  create_table "lists", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.boolean "completed", default: false
   end
 
-  create_table 'product_categories', force: :cascade do |t|
-    t.bigint 'product_id', null: false
-    t.bigint 'category_id', null: false
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index ['category_id'], name: 'index_product_categories_on_category_id'
-    t.index %w[product_id category_id], name: 'index_product_categories_on_product_id_and_category_id', unique: true
-    t.index ['product_id'], name: 'index_product_categories_on_product_id'
+  create_table "product_categories", force: :cascade do |t|
+    t.bigint "product_id", null: false
+    t.bigint "category_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_product_categories_on_category_id"
+    t.index ["product_id", "category_id"], name: "index_product_categories_on_product_id_and_category_id", unique: true
+    t.index ["product_id"], name: "index_product_categories_on_product_id"
   end
 
-  create_table 'product_stores', force: :cascade do |t|
-    t.bigint 'product_id'
-    t.bigint 'store_id'
-    t.integer 'regular_price', null: false
-    t.integer 'discounted_price', null: false
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index ['product_id'], name: 'index_product_stores_on_product_id'
-    t.index ['store_id'], name: 'index_product_stores_on_store_id'
+  create_table "product_stores", force: :cascade do |t|
+    t.bigint "product_id"
+    t.bigint "store_id"
+    t.integer "regular_price", null: false
+    t.integer "discounted_price", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_product_stores_on_product_id"
+    t.index ["store_id"], name: "index_product_stores_on_store_id"
   end
 
-  create_table 'products', force: :cascade do |t|
-    t.bigint 'user_id', null: false
-    t.string 'name', null: false
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index ['user_id'], name: 'index_products_on_user_id'
+  create_table "products", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_products_on_user_id"
   end
 
-  create_table 'stores', force: :cascade do |t|
-    t.string 'name', null: false
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
+  create_table "stores", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table 'users', force: :cascade do |t|
-    t.string 'email', null: false
-    t.string 'crypted_password'
-    t.string 'salt'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index ['email'], name: 'index_users_on_email', unique: true
+  create_table "users", force: :cascade do |t|
+    t.string "email", null: false
+    t.string "crypted_password"
+    t.string "salt"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
-  add_foreign_key 'product_categories', 'categories'
-  add_foreign_key 'product_categories', 'products'
-  add_foreign_key 'products', 'users'
+  add_foreign_key "product_categories", "categories"
+  add_foreign_key "product_categories", "products"
+  add_foreign_key "products", "users"
 end
