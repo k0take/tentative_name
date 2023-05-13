@@ -14,13 +14,16 @@
                   <%= f.label "#{list.name}", class: "form-check-label list_name ml-3" %>
                 <% end %>
               </td>
-              <td><%= button_to t('defaults.destroy'), list_path(list), method: :delete, class: "btn btn-info ml-3" %></td>
+              <td><%= button_to t('defaults.destroy'), list_path(list), method: :delete, class: "btn btn-secondary ml-4" %></td>
             </tr>
           <% end %>
         <div>
         <%= form_with model: @list, local: true do |f| %>
           <div class="form-group">
             <%= f.text_field :name, class: 'form-control', placeholder: "例）トマト" %>
+          </div>
+          <div class="list_btn">
+            <%= f.submit t('defaults.signup'), class: 'btn btn-info mb-4' %>
           </div>
         <% end %>
         </div>
