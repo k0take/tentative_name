@@ -21,15 +21,21 @@ module ApplicationHelper
         description: :description,
         type: 'website',
         url: request.original_url,
-        image: image_url('ogp.png'), # 配置するパスやファイル名によって変更すること
-        local: 'ja-JP'
+        images: [
+          { url: image_url('ogp.png'), secure_url: image_url('ogp.png') }
+        ],
+        locals: {
+          'ja-JP': {}
+        }
       },
-      # Twitter用の設定を個別で設定する
       twitter: {
-        card: 'summary_large_image', # Twitterで表示する場合は大きいカードにする
-        site: '@', # アプリの公式Twitterアカウントがあれば、アカウント名を書く
-        image: image_url('ogp.png') # 配置するパスやファイル名によって変更すること
+        card: 'summary_large_image',
+        image: {
+          _: image_url('ogp.png'),
+          width: 1200,
+          height: 630
+        }
       }
     }
-  end
+  end  
 end
